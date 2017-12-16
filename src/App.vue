@@ -119,36 +119,39 @@
 	</div>
 </template>
 <script>
-import VueStars from './components/vue-stars'
+import VueStars from "vue-stars"
 
 export default {
-  name: 'app',
-  data: function() { return { 
-		simple: 0,
-		pinwheel: 5,
-		ro: 4,
-		letter: 2,
-		roman: 4,
-		fa1: 3,
-		fa2: 3,
-		check: 3,
-		smile: 2
-	}; },
-  components: {
-    VueStars
-  }
+	name: "app",
+	data: function() {
+		return {
+			simple: 0,
+			pinwheel: 5,
+			ro: 4,
+			letter: 2,
+			roman: 4,
+			fa1: 3,
+			fa2: 3,
+			check: 3,
+			smile: 2,
+		}
+	},
+	components: {
+		VueStars,
+	},
 }
 </script>
 <style>
-	.vue-stars { font-size: 1.25em; }
+.vue-stars {
+	font-size: 1.25em;
+}
 
-	@font-face {
-		font-family: FontAwesome;
-		src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff);
-	}
+@font-face {
+	font-family: FontAwesome;
+	src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff);
+}
 
-	.fa {
-		font-family: FontAwesome;
-	}
-
+.fa {
+	font-family: FontAwesome;
+}
 </style>
