@@ -1,6 +1,6 @@
 {
 	"name": "vue-stars-sample",
-	"version": "0.3.0",
+	"version": "1.0.0",
 	"description":
 		"Example app showing the flexibility of the vue-stars component",
 	"author": "richardtallent <richard@tallent.us>",
@@ -14,7 +14,7 @@
 		"build": "node build/build.js"
 	},
 	"dependencies": {
-		"vue-stars": "^0.3.0"
+		"vue-stars": "^1.0.0"
 	},
 	"devDependencies": {
 		"autoprefixer": "^7.2.3",
@@ -28,6 +28,8 @@
 		"connect-history-api-fallback": "^1.5.0",
 		"copy-webpack-plugin": "^4.3.0",
 		"css-loader": "^0.28.7",
+		"cross-env": "^5.0.5",
+		"cross-spawn": "^5.1.0",
 		"eslint": "^4.13.1",
 		"eslint-friendly-formatter": "^3.0.0",
 		"eslint-import-resolver-webpack": "^0.8.3",
