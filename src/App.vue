@@ -1,7 +1,5 @@
 <template>
-	
 	<div id="app">
-
 		<section class="hero is-medium is-info is-bold">
 			<div class="hero-body">
 				<div class="container">
@@ -13,14 +11,21 @@
 
 		<section class="section">
 			<div class="container">
-
 				<div class="content">
-					<p><b>vue-stars</b> is a Vue component for <b>display or input</b> of "ratings" (such as stars).
-					It supports `v-model` binding, is very customizable, and is available under the MIT license.</p>
+					<p>
+						<b>vue-stars</b> is a Vue component for
+						<b>display or input</b> of "ratings" (such as stars).
+						It supports `v-model` binding, is very customizable, and is available under the MIT license.
+					</p>
 
-					<p>For detailed documentation, please see <a href="https://github.com/richardtallent/vue-stars">the
-					Github repository</a>. This page contains some examples illustrating the flexibility of this
-					control, you can change the examples live to see the results.</p>
+					<p>
+						For detailed documentation, please see
+						<a href="https://github.com/richardtallent/vue-stars">
+							the
+							Github repository
+						</a>. This page contains some examples illustrating the flexibility of this
+						control, you can change the examples live to see the results.
+					</p>
 
 					<h2 class="title is-4 is-spaced">Demos!</h2>
 				</div>
@@ -32,7 +37,7 @@
 								<p class="menu-label">Examples</p>
 								<ul class="menu-list">
 									<li v-for="example in examples" :key="example.name">
-										<a 
+										<a
 											@click="switchExample(example)"
 											:class="{ 'is-active': example.name==demo.name }"
 										>{{ example.name }}</a>
@@ -43,15 +48,15 @@
 					</div>
 					<div class="tile is-vertical is-parent">
 						<div class="tile is-info is-child notification">{{ demo.description }}</div>
-						<div class="tile is-child box">
-							Live Demo: <vue-stars
+						<div class="tile is-child box">Live Demo:
+							<vue-stars
 								name="multiDemo"
 								v-model="demo.value"
 								:active-color="demo.activeColor"
 								:inactive-color="demo.inactiveColor"
 								:shadow-color="demo.shadowColor"
 								:hover-color="demo.hoverColor"
-								:max="demo.max"								
+								:max="demo.max"
 								:readonly="demo.readonly"
 								:char="demo.char"
 								:inactive-char="demo.inactiveChar"
@@ -61,86 +66,103 @@
 						<div class="tile">
 							<div class="tile">
 								<div class="tile box is-child demo-controls">
-									<div><label for="fActiveColor">Active color:</label><input type="color" v-model="demo.activeColor" name="fActiveColor"></div>
-									<div><label for="fInactiveColor">Inactive color:</label><input type="color" v-model="demo.inactiveColor" name="fInactiveColor"></div>
-									<div><label for="fShadowColor">Shadow color:</label><input type="color" v-model="demo.shadowColor" name="fShadowColor"></div>
-									<div><label for="fHoverColor">Hover color:</label><input type="color" v-model="demo.hoverColor" name="fHoverColor"></div>
-									<div><label for="fValue">Value:</label><input type="number" v-model.number="demo.value" name="fValue"></div>
-									<div><label for="fMax">Max value:</label><input type="number" v-model.number="demo.max" name="fMax"></div>
-									<div><label for="fReadOnly">Read only?</label><input type="checkbox" v-model="demo.readonly" name="fReadOnly"></div>
-									<div><label for="fChar">Characters:</label><input type="text" v-model="demo.char" name="fChar"></div>
-									<div><label for="fIntactiveChar">Inactive characters:</label><input type="text" v-model="demo.inactiveChar" name="fIntactiveChar"></div>
-								</div></div><div class="tile">
-								<div class="tile box is-child source-code">
-&lt;vue-stars
-	name="demo"
-	:active-color="{{ demo.activeColor }}"
-	:inactive-color="{{ demo.inactiveColor }}"
-	:shadow-color="{{ demo.shadowColor }}"
-	:hover-color="{{ demo.hoverColor }}"
-	:max="{{ demo.max }}"
-	:value="{{ demo.value }}"
-	:readonly="{{ demo.readonly }}"
-	:char="{{ demo.char }}"
-	:inactive-char="{{ demo.inactiveChar }}"
-	:class="{{ demo.class }}"
-/&gt;
-								</div></div>
+									<div>
+										<label for="fActiveColor">Active color:</label>
+										<input type="color" v-model="demo.activeColor" name="fActiveColor">
+									</div>
+									<div>
+										<label for="fInactiveColor">Inactive color:</label>
+										<input type="color" v-model="demo.inactiveColor" name="fInactiveColor">
+									</div>
+									<div>
+										<label for="fShadowColor">Shadow color:</label>
+										<input type="color" v-model="demo.shadowColor" name="fShadowColor">
+									</div>
+									<div>
+										<label for="fHoverColor">Hover color:</label>
+										<input type="color" v-model="demo.hoverColor" name="fHoverColor">
+									</div>
+									<div>
+										<label for="fValue">Value:</label>
+										<input type="number" v-model.number="demo.value" name="fValue">
+									</div>
+									<div>
+										<label for="fMax">Max value:</label>
+										<input type="number" v-model.number="demo.max" name="fMax">
+									</div>
+									<div>
+										<label for="fReadOnly">Read only?</label>
+										<input type="checkbox" v-model="demo.readonly" name="fReadOnly">
+									</div>
+									<div>
+										<label for="fChar">Characters:</label>
+										<input type="text" v-model="demo.char" name="fChar">
+									</div>
+									<div>
+										<label for="fIntactiveChar">Inactive characters:</label>
+										<input type="text" v-model="demo.inactiveChar" name="fIntactiveChar">
+									</div>
+								</div>
+							</div>
+							<div class="tile">
+								<div class="tile box is-child source-code" v-html="getSampleCode(demo)"/>
+							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="content">
 					<h2 class="title is-4 is-spaced">Slot Demo</h2>
-					<p>vue-stars supports optional named slots ("activeLabel" and "inactiveLabel") so you can plug in your own
-					content for what shows for active and inactive content, such as raster or SVG images, etc. Since these
-					slots are <i>repeated</i> for each value, the <b>slot-scope</b> attribute is required, not just the
-					<b>slot</b> name.</p>
+					<p>
+						vue-stars supports optional named slots ("activeLabel" and "inactiveLabel") so you can plug in your own
+						content for what shows for active and inactive content, such as raster or SVG images, etc. Since these
+						slots are
+						<i>repeated</i> for each value, the
+						<b>slot-scope</b> attribute is required, not just the
+						<b>slot</b> name.
+					</p>
 
-					<p>To ensure a good user experience, you should take care that the slot content has a consistent width
-					and height. If your slot content is text, it will still have the active, inactive, shadow, and hover
-					colors applied unless you override them via CSS.</p>
+					<p>
+						To ensure a good user experience, you should take care that the slot content has a consistent width
+						and height. If your slot content is text, it will still have the active, inactive, shadow, and hover
+						colors applied unless you override them via CSS.
+					</p>
 				</div>
 
 				<div class="box">
-<vue-stars name="slotDemo" :value="3" :max="10">
-	<img slot-scope="props" slot="activeLabel" src="static/logo.png">
-	<span slot-scope="props" slot="inactiveLabel">🙁</span>
-</vue-stars>
+					<vue-stars name="slotDemo" :value="3" :max="10">
+						<img slot="activeLabel" src="./assets/logo.png">
+						<span slot="inactiveLabel">🙁</span>
+					</vue-stars>
 				</div>
 
 				<div class="box is-child source-code">
-&lt;vue-stars
-	name="slotDemo"
-	:max="10"
-	:value="3"/&gt;
-	&lt;img slot-scope="props" slot="activeLabel" src="static/logo.png"&gt;
-	&lt;span slot-scope="props" slot="inactiveLabel"&gt;🙁&lt;/span&gt;
-&lt;/vue-stars&gt;
+					&lt;vue-stars
+					name="slotDemo"
+					:max="10"
+					:value="3"/&gt;
+					&lt;img slot="activeLabel" src="./assets/logo.png"&gt;
+					&lt;span slot="inactiveLabel"&gt;🙁&lt;/span&gt;
+					&lt;/vue-stars&gt;
 				</div>
-
 
 				<div class="content">
 					<h2 class="title is-4 is-spaced">Contact</h2>
-					<p>For more information, please feel free to reach out to me using Github issues, or via the contact methods
-					on my <a href="https://www.tallent.us">home page</a>.</p>
+					<p>
+						For more information, please feel free to reach out to me using Github issues, or via the contact methods
+						on my
+						<a
+							href="https://www.tallent.us"
+						>home page</a>.
+					</p>
 				</div>
-
 			</div>
 		</section>
-
 	</div>
 </template>
 <script>
-import VueStars from "vue-stars"
-// For local testing
-//import VueStars from "../../vue-stars/src/VueStars.vue"
-
 export default {
 	name: "App",
-	components: {
-		VueStars,
-	},
 	data: function() {
 		return {
 			simple: 0,
@@ -244,6 +266,19 @@ export default {
 		switchExample(example) {
 			this.demo = Object.assign({}, this.examples[0], example)
 		},
+		getSampleCode: demo => `&lt;vue-stars
+name="demo"
+:active-color="${demo.activeColor}"
+:inactive-color="${demo.inactiveColor}"
+:shadow-color="${demo.shadowColor}"
+:hover-color="${demo.hoverColor}"
+:max="${demo.max}"
+:value="${demo.value}"
+:readonly="${demo.readonly}"
+:char="${demo.char}"
+:inactive-char="${demo.inactiveChar}"
+:class="${demo.class}"
+/&gt;`,
 	},
 }
 </script>

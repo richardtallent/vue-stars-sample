@@ -26,3 +26,5 @@ npm run dev
 | 2017.10.30 | 0.2.0   | Fixes mostly for iOS Safari        |
 | 2017.12.18 | 0.3.0   | Split from the main component repo |
 | 2018.02.17 | 1.0.0   | Upgraded with the component        |
+| 2018.12.24 | 1.1.0   | Upgraded with the component        |
+| 2018.12.24 | 1.1.3   | Upgraded with the component        |
