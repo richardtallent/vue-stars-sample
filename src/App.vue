@@ -161,8 +161,12 @@
 	</div>
 </template>
 <script>
+import { VueStars } from "vue-stars"
+//import VueStars from "../../vue-stars/src/components/VueStars.vue" // local repo for testing
+
 export default {
 	name: "App",
+	components: { VueStars },
 	data: function() {
 		return {
 			simple: 0,

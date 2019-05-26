@@ -28,3 +28,4 @@ npm run dev
 | 2018.02.17 | 1.0.0   | Upgraded with the component        |
 | 2018.12.24 | 1.1.0   | Upgraded with the component        |
 | 2018.12.24 | 1.1.3   | Upgraded with the component        |
+| 2019.05.26 | 1.2.0   | Upgraded with the component        |
