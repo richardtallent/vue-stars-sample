@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"vue": "^2.6.10",
-		"vue-stars": "^1.2.0"
+		"vue-stars": "^1.2.1"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "^3.8.0",
@@ -23,32 +23,17 @@
 		"@vue/eslint-config-prettier": "^4.0.0",
 		"babel-eslint": "^10.0.1",
 		"eslint": "^5.16.0",
+		"eslint-config-tabsanity": "^1.0.6",
 		"eslint-plugin-vue": "^5.2.2",
 		"node-sass": "^4.12.0",
 		"sass-loader": "^7.0.1",
 		"vue-template-compiler": "^2.6.10"
 	},
 	"eslintConfig": {
-		"root": true,
-		"env": {
-			"node": true
-		},
 		"extends": [
-			"plugin:vue/essential",
-			"@vue/prettier"
-		],
-		"rules": {
-			"vue/html-indent": "tab",
-			"vue/max-attributes-per-line": 3,
-			"no-console": "warn"
-		},
-		"parserOptions": {
-			"parser": "babel-eslint"
-		}
+			"tabsanity"
+		]
 	},
-	"eslintIgnore": [
-		"node_modules/*.*"
-	],
 	"postcss": {
 		"plugins": {
 			"autoprefixer": {}
@@ -59,6 +44,7 @@
 		"semi": false,
 		"singleQuote": false,
 		"bracketSpacing": true,
+		"printWidth": 160,
 		"trailingComma": "es5"
 	},
 	"stylelint": {
@@ -69,7 +55,6 @@
 	},
 	"browserslist": [
 		"> 1%",
-		"last 2 versions",
-		"not ie <= 11"
+		"ie >= 11"
 	]
 }
