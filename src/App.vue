@@ -12,16 +12,17 @@
 		<section class="section">
 			<div class="container">
 				<div class="content">
+					<p>
+						<b>vue-stars</b> is a Vue component for <b>display or input</b> of "ratings" (such as stars). It supports `v-model` binding, is very customizable,
+						and is available under the MIT license.
+					</p>
 
-					<p><b>vue-stars</b> is a Vue component for <b>display or input</b> of "ratings" (such as stars). It supports `v-model`
-						binding, is very customizable, and is available under the MIT license.</p>
-
-					<p>For detailed documentation, please see <a href="https://github.com/richardtallent/vue-stars">the Github repository</a>.
-						This contains some examples illustrating the flexibility of this control, you can change the examples live to see the
-						results.</p>
+					<p>
+						For detailed documentation, please see <a href="https://github.com/richardtallent/vue-stars">the Github repository</a>. This contains some examples
+						illustrating the flexibility of this control, you can change the examples live to see the results.
+					</p>
 
 					<h2 class="title is-4 is-spaced">Demos!</h2>
-
 				</div>
 
 				<div v-if="demo" class="tile is-ancestor">
@@ -52,46 +53,47 @@
 								:char="demo.char"
 								:inactive-char="demo.inactiveChar"
 								:class="demo.class"
-								name="multiDemo" />
+								name="multiDemo"
+							/>
 						</div>
 						<div class="tile">
 							<div class="tile">
 								<div class="tile box is-child demo-controls">
 									<div>
 										<label for="fActiveColor">Active color:</label>
-										<input v-model="demo.activeColor" type="color" name="fActiveColor">
+										<input v-model="demo.activeColor" type="color" name="fActiveColor" />
 									</div>
 									<div>
 										<label for="fInactiveColor">Inactive color:</label>
-										<input v-model="demo.inactiveColor" type="color" name="fInactiveColor">
+										<input v-model="demo.inactiveColor" type="color" name="fInactiveColor" />
 									</div>
 									<div>
 										<label for="fShadowColor">Shadow color:</label>
-										<input v-model="demo.shadowColor" type="color" name="fShadowColor">
+										<input v-model="demo.shadowColor" type="color" name="fShadowColor" />
 									</div>
 									<div>
 										<label for="fHoverColor">Hover color:</label>
-										<input v-model="demo.hoverColor" type="color" name="fHoverColor">
+										<input v-model="demo.hoverColor" type="color" name="fHoverColor" />
 									</div>
 									<div>
 										<label for="fValue">Value:</label>
-										<input v-model.number="demo.value" type="number" name="fValue">
+										<input v-model.number="demo.value" type="number" name="fValue" />
 									</div>
 									<div>
 										<label for="fMax">Max value:</label>
-										<input v-model.number="demo.max" type="number" name="fMax">
+										<input v-model.number="demo.max" type="number" name="fMax" />
 									</div>
 									<div>
 										<label for="fReadOnly">Read only?</label>
-										<input v-model="demo.readonly" type="checkbox" name="fReadOnly">
+										<input v-model="demo.readonly" type="checkbox" name="fReadOnly" />
 									</div>
 									<div>
 										<label for="fChar">Characters:</label>
-										<input v-model="demo.char" type="text" name="fChar">
+										<input v-model="demo.char" type="text" name="fChar" />
 									</div>
 									<div>
 										<label for="fIntactiveChar">Inactive characters:</label>
-										<input v-model="demo.inactiveChar" type="text" name="fIntactiveChar">
+										<input v-model="demo.inactiveChar" type="text" name="fIntactiveChar" />
 									</div>
 								</div>
 							</div>
@@ -105,35 +107,36 @@
 				<div class="content">
 					<h2 class="title is-4 is-spaced">Slot Demo</h2>
 
-					<p>vue-stars supports optional named slots ("activeLabel" and "inactiveLabel") so you can plug in your own content for what shows for active and inactive
-						content, such as raster or SVG images, etc. Since these slots are <i>repeated</i> for each value, the <b>slot-scope</b> attribute is required, not just
-						the <b>slot</b> name.</p>
+					<p>
+						vue-stars supports optional named slots ("activeLabel" and "inactiveLabel") so you can plug in your own content for what shows for active and
+						inactive content, such as raster or SVG images, etc. Since these slots are <i>repeated</i> for each value, the <b>slot-scope</b> attribute is
+						required, not just the <b>slot</b> name.
+					</p>
 
-					<p>To ensure a good user experience, you should take care that the slot content has a consistent width and height. If your slot content is text, it will
-						still have the active, inactive, shadow, and hover colors applied unless you override them via CSS.</p>
-
+					<p>
+						To ensure a good user experience, you should take care that the slot content has a consistent width and height. If your slot content is text, it
+						will still have the active, inactive, shadow, and hover colors applied unless you override them via CSS.
+					</p>
 				</div>
 
 				<div class="box">
 					<vue-stars name="slotDemo" :value="3" :max="10">
-						<img slot="activeLabel" src="./assets/logo.png">
+						<img slot="activeLabel" src="./assets/logo.png" />
 						<span slot="inactiveLabel">🙁</span>
 					</vue-stars>
 				</div>
 
 				<code class="box is-child source-code">
-					&lt;vue-stars
-					name="slotDemo"
-					:max="10"
-					:value="3"/&gt;
-					&lt;img slot="activeLabel" src="./assets/logo.png"&gt;
-					&lt;span slot="inactiveLabel"&gt;🙁&lt;/span&gt;
-					&lt;/vue-stars&gt;
+					&lt;vue-stars name="slotDemo" :max="10" :value="3"/&gt; &lt;img slot="activeLabel" src="./assets/logo.png"&gt; &lt;span
+					slot="inactiveLabel"&gt;🙁&lt;/span&gt; &lt;/vue-stars&gt;
 				</code>
 
 				<div class="content">
 					<h2 class="title is-4 is-spaced">Contact</h2>
-					<p>For more information, please feel free to reach out to me using Github issues, or via the contact methods on my <a href="https://www.tallent.us">home page</a>.</p>
+					<p>
+						For more information, please feel free to reach out to me using Github issues, or via the contact methods on my
+						<a href="https://www.tallent.us">home page</a>.
+					</p>
 				</div>
 			</div>
 		</section>
